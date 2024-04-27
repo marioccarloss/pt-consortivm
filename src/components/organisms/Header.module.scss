@@ -1,0 +1,72 @@
+@use "../settings/colors";
+@use "../settings/sizes";
+@use "../generic/reset";
+@use "../generic/mixins";
+
+.header {
+  display: grid;
+  grid-gap: 0.5rem;
+  margin: 0 0 1rem;
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+
+    > p {
+      font-size: 1rem;
+      line-height: 1.45;
+      color: colors.$color-gray;
+    }
+
+    > *:not(img) {
+      padding: 0.5rem 0;
+    }
+  }
+
+  &__list {
+    color: colors.$color-gray;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1.1;
+  }
+
+  &__weather {
+    order: -1;
+
+    p {
+      display: inline;
+      color: colors.$color-gray;
+
+      &:first-of-type {
+        &::after {
+          content: ",";
+          margin-right: 0.25rem;
+        }
+      }
+    }
+  }
+
+  @include mixins.breakpoint(small) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &__weather {
+      order: 1;
+      padding: 0.5rem 0 0;
+      text-align: right;
+
+      p {
+        display: block;
+
+        &:first-of-type {
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

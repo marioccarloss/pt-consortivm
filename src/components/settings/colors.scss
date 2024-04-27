@@ -1,0 +1,17 @@
+$color-primary: #202124;
+$color-secondary: #fbbc04;
+$color-gray: #81868a;
+$color-gray-light: #dadce0;
+$color-gray-lighter: #f8f9fa;
+$color-white: #ffffff;
+$color-black: #000000;
+
+:root {
+  --color-primary: #{$color-primary};
+  --color-secondary: #{$color-secondary};
+  --color-gray: #{$color-gray};
+  --color-gray-light: #{$color-gray-light};
+  --color-gray-lighter: #{$color-gray-lighter};
+  --color-white: #{$color-white};
+  --color-black: #{$color-black};
+}

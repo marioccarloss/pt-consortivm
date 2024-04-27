@@ -1,0 +1,47 @@
+@use "../settings/colors";
+
+.weather {
+  &__header {
+    margin-bottom: 1rem;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-size: 0.9231rem;
+
+    li {
+      display: flex;
+      align-items: center;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 1rem;
+        background-color: colors.$color-gray-light;
+        margin-left: 0.5rem;
+      }
+
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    border-bottom: 3px solid colors.$color-secondary;
+    position: absolute;
+  }
+
+  &__content {
+    overflow: auto;
+  }
+}

@@ -1,0 +1,14 @@
+@use "../settings/border";
+@use "../settings/shadow";
+
+.home {
+  display: grid;
+  place-items: center;
+
+  > [class*="container"] {
+    box-shadow: shadow.$shadow-default;
+    border-radius: border.$radius-medium;
+    padding: 1.72rem;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,92 @@
+@use "../settings/colors";
+@use "../settings/border";
+
+.tabContent {
+  overflow: auto;
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  &__empty {
+    color: colors.$color-gray;
+    display: grid;
+    place-items: center;
+    min-height: 7.83rem;
+  }
+
+  &__item,
+  button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__item {
+    flex: 1;
+    min-width: 5rem;
+    gap: 0.25rem;
+  }
+
+  time {
+    font-size: 0.82rem;
+    color: colors.$color-gray;
+  }
+
+  img {
+    width: 3rem;
+  }
+
+  strong {
+    font-weight: 500;
+  }
+
+  b {
+    font-weight: 400;
+  }
+
+  span {
+    color: colors.$color-gray;
+  }
+
+  footer {
+    display: flex;
+    gap: 0.42rem;
+    font-size: 0.9rem;
+  }
+
+  button {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    padding: 0.25rem;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .active {
+    button {
+      position: relative;
+
+      > * {
+        z-index: 2;
+        position: relative;
+      }
+
+      &::before {
+        content: "";
+        background: colors.$color-gray-lighter;
+        border-radius: border.$radius-medium;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        height: 100%;
+        width: 90%;
+      }
+    }
+  }
+}
